@@ -18,6 +18,7 @@ This **Discord bot** is built with [Discord.js](https://discord.js.org/) and ena
 ├── 📂 commands/
 │   ├── ping.js
 │   ├── user.js
+│   ├── server-info.js
 ├── 📂 events/
 │   ├── ready.js             # Event fired when the bot is ready
 │   ├── interactionCreate.js # Event to handle interactions
@@ -73,6 +74,7 @@ Here is the list of currently implemented commands:
 |---------------|----------------------------------------|
 | **`/ping`**   | Check the bot and Discord API latency. |
 | **`/user`** | Get information about a selected user.  |
+| **`/server-info`** | Displays server information.  |
 
 ---
 
