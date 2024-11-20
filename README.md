@@ -17,8 +17,9 @@ This **Discord bot** is built with [Discord.js](https://discord.js.org/) and ena
 📂 root/
 ├── 📂 commands/
 │   ├── ping.js
-│   ├── user.js
+│   ├── reload.js
 │   ├── server-info.js
+│   ├── user.js
 ├── 📂 events/
 │   ├── ready.js             # Event fired when the bot is ready
 │   ├── interactionCreate.js # Event to handle interactions
@@ -53,6 +54,7 @@ This **Discord bot** is built with [Discord.js](https://discord.js.org/) and ena
    ```plaintext
    TOKEN=your-bot-token
    CLIENT_ID=your-bot-client-id
+   OWNER_ID=your-id
    ```
 
 4. Start the bot:
@@ -75,6 +77,8 @@ Here is the list of currently implemented commands:
 | **`/ping`**   | Check the bot and Discord API latency. |
 | **`/user`** | Get information about a selected user.  |
 | **`/server-info`** | Displays server information.  |
+| **`/reload`** | Restarts the bot (Admin only).  |
+
 
 ---
 
