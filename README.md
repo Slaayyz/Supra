@@ -16,6 +16,7 @@ This **Discord bot** is built with [Discord.js](https://discord.js.org/) and ena
 ```plaintext
 📂 root/
 ├── 📂 commands/
+│   ├── avatar.js
 │   ├── ping.js
 │   ├── reload.js
 │   ├── server-info.js
@@ -41,8 +42,8 @@ This **Discord bot** is built with [Discord.js](https://discord.js.org/) and ena
 ## 🚀 **How to Use**
 1. Clone this repository:
    ```bash
-   git clone <repository-url>
-   cd <repository-folder>
+   git clone https://github.com/Slaayyz/Supra
+   cd Supra
    ```
 
 2. Install dependencies:
@@ -74,11 +75,11 @@ Here is the list of currently implemented commands:
 
 | Command       | Description                            |
 |---------------|----------------------------------------|
+| **`/avatar`**   | Displays a user’s avatar. |
 | **`/ping`**   | Check the bot and Discord API latency. |
-| **`/user`** | Get information about a selected user.  |
-| **`/server-info`** | Displays server information.  |
 | **`/reload`** | Restarts the bot (Admin only).  |
-
+| **`/server-info`** | Displays server information.  |
+| **`/user`** | Get information about a selected user.  |
 
 ---
 
