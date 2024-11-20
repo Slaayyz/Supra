@@ -17,17 +17,18 @@ This **Discord bot** is built with [Discord.js](https://discord.js.org/) and ena
 📂 root/
 ├── 📂 commands/
 │   ├── avatar.js
+│   ├── clear.js
 │   ├── ping.js
 │   ├── reload.js
 │   ├── server-info.js
 │   ├── user.js
 ├── 📂 events/
-│   ├── ready.js             # Event fired when the bot is ready
-│   ├── interactionCreate.js # Event to handle interactions
-├── .env                     # Environment variables
-├── .gitignore               # Files to ignore in Git
-├── index.js                 # Main entry point for the bot
-└── package.json             # Project metadata and dependencies
+│   ├── ready.js              # Event fired when the bot is ready
+│   ├── interactionCreate.js  # Event to handle interactions
+├── .env                      # Environment variables
+├── .gitignore                # Files to ignore in Git
+├── index.js                  # Main entry point for the bot
+└── package.json              # Project metadata and dependencies
 ```
 
 ---
@@ -76,6 +77,7 @@ Here is the list of currently implemented commands:
 | Command       | Description                            |
 |---------------|----------------------------------------|
 | **`/avatar`**   | Displays a user’s avatar. |
+| **`/clear`**   | Deletes a specified number of messages. |
 | **`/ping`**   | Check the bot and Discord API latency. |
 | **`/reload`** | Restarts the bot (Admin only).  |
 | **`/server-info`** | Displays server information.  |
