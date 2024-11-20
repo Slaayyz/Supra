@@ -125,5 +125,3 @@ To add new commands:
    };
    ```
 3. Restart the bot, and the new command will be registered automatically.
-
-Update the **Available Commands** section of the README to reflect your new command.
