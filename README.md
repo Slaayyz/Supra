@@ -19,6 +19,7 @@ This **Discord bot** is built with [Discord.js](https://discord.js.org/) and ena
 │   ├── avatar.js
 │   ├── ban.js
 │   ├── clear.js
+│   ├── meme.js
 │   ├── ping.js
 │   ├── poll.js
 │   ├── reload.js
@@ -82,6 +83,7 @@ Here is the list of currently implemented commands:
 | **`/avatar`**   | Displays a user’s avatar.            |
 | **`/ban`**   | Bans a member from the server.            |
 | **`/clear`**   | Deletes a specified number of messages. |
+| **`/meme`**   | Displays a random meme. |
 | **`/ping`**    | Check the bot and Discord API latency. |
 | **`/poll`**    | Creates a poll with multiple options. |
 | **`/reload`**  | Restarts the bot (Admin only).        |
