@@ -13,6 +13,8 @@ module.exports = {
             .setThumbnail(guild.iconURL({ dynamic: true }))
             .addFields(
                 { name: 'Name', value: guild.name, inline: true },
+                { name: 'Channels', value: `${guild.channels.cache.size}`, inline: true },
+                { name: 'Roles', value: `${guild.roles.cache.size}`, inline: true },
                 { name: 'Members', value: `${guild.memberCount}`, inline: true },
                 { name: 'Created On', value: guild.createdAt.toDateString(), inline: false }
             )

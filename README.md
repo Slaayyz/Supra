@@ -17,10 +17,13 @@ This **Discord bot** is built with [Discord.js](https://discord.js.org/) and ena
 📂 root/
 ├── 📂 commands/
 │   ├── avatar.js
+│   ├── ban.js
 │   ├── clear.js
 │   ├── ping.js
+│   ├── poll.js
 │   ├── reload.js
 │   ├── server-info.js
+│   ├── unban.js
 │   ├── user.js
 ├── 📂 events/
 │   ├── ready.js              # Event fired when the bot is ready
@@ -76,12 +79,15 @@ Here is the list of currently implemented commands:
 
 | Command       | Description                            |
 |---------------|----------------------------------------|
-| **`/avatar`**   | Displays a user’s avatar. |
+| **`/avatar`**   | Displays a user’s avatar.            |
+| **`/ban`**   | Bans a member from the server.            |
 | **`/clear`**   | Deletes a specified number of messages. |
-| **`/ping`**   | Check the bot and Discord API latency. |
-| **`/reload`** | Restarts the bot (Admin only).  |
-| **`/server-info`** | Displays server information.  |
-| **`/user`** | Get information about a selected user.  |
+| **`/ping`**    | Check the bot and Discord API latency. |
+| **`/poll`**    | Creates a poll with multiple options. |
+| **`/reload`**  | Restarts the bot (Admin only).        |
+| **`/server-info`** | Displays server information.     |
+| **`/unban`**   | Unbans a user by their ID.           |
+| **`/user`**    | Get information about a selected user. |
 
 ---
 
