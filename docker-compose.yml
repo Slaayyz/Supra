@@ -1,0 +1,5 @@
+services:
+  supra:
+    image: harbor.m1000.fr/supra/supra:latest
+    environment:
+      - TOKEN=your_token
