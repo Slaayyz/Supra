@@ -13,7 +13,8 @@ module.exports = {
                 .setDescription('Reason for banning the user.')
                 .setRequired(false))
         .setDefaultMemberPermissions(PermissionFlagsBits.BanMembers),
-    async execute(interaction) {
+    category: 'Moderation',
+        async execute(interaction) {
         const user = interaction.options.getUser('user');
         const reason = interaction.options.getString('reason') || 'No reason provided.';
         const member = interaction.guild.members.cache.get(user.id);

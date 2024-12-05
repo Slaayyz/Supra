@@ -6,6 +6,7 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('meme')
         .setDescription('Displays a random meme.'),
+    category: 'Fun',
     async execute(interaction) {
         await interaction.deferReply();
         try {

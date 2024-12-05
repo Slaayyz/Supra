@@ -8,6 +8,7 @@ module.exports = {
             option.setName('user-id')
                 .setDescription('The ID of the user to unban.')
                 .setRequired(true)),
+    category: 'Moderation',
     async execute(interaction) {
         if (!interaction.member.permissions.has(PermissionsBitField.Flags.BanMembers)) {
             return interaction.reply({ content: "❌ You don't have permission to unban members.", ephemeral: true });

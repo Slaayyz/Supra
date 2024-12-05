@@ -12,6 +12,7 @@ module.exports = {
             option.setName('options')
                 .setDescription('Poll options (separate with commas).')
                 .setRequired(true)),
+    category: 'Fun',
     async execute(interaction) {
         const question = interaction.options.getString('question');
         const optionsInput = interaction.options.getString('options');
@@ -37,8 +38,7 @@ module.exports = {
 
         const embed = new EmbedBuilder()
             .setColor(0x1ABC9C)
-            .setTitle('📊 Poll')
-            .setDescription(`**${question}**\n\n${description}`)
+            .setTitle(`**${question}**\n\n${description}`)
             .setFooter({
                 text: `Poll created by ${interaction.user.username}`,
                 iconURL: interaction.user.displayAvatarURL(),

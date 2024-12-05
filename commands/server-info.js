@@ -4,6 +4,7 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('server-info')
         .setDescription('Displays server information.'),
+    category: 'Utility',
     async execute(interaction) {
         const { guild } = interaction;
 

@@ -6,6 +6,7 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('reload')
         .setDescription('Restarts the bot (Admin only).'),
+    category: 'Owner',
     async execute(interaction) {
         if (interaction.user.id !== process.env.OWNER_ID) {
             return interaction.reply({ content: '❌ You do not have permission to use this command.', ephemeral: true });

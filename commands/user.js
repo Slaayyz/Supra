@@ -10,6 +10,7 @@ module.exports = {
                 .setDescription('The user you want to get information about.')
                 .setRequired(true)
         ),
+    category: 'Utility',
     async execute(interaction) {
         const user = interaction.options.getUser('target');
         const member = interaction.guild.members.cache.get(user.id);

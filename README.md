@@ -1,14 +1,16 @@
 # 🤖 Supra
 
-This **Discord bot** is built with [Discord.js](https://discord.js.org/) and enables slash command functionalities. It includes a basic setup to handle events and commands effectively, with automatic command registration and error handling.
+This **Discord bot** is built with [Discord.js](https://discord.js.org/) and supports slash command functionality. It includes a modular design, automatic command registration, and flexible configuration using environment variables.
 
 ---
 
 ## ✨ **Key Features**
 - ⚙️ **Slash command support**: Easily add and execute commands.
-- 🔄 **Automatic command registration**: Commands are registered dynamically on startup.
-- 🔔 **Event-driven architecture**: Manage bot events such as `ready` and `interactionCreate`.
-- 🛠️ **Modular design**: Commands and events are organized into separate files for scalability.
+- 🔄 **Automatic command registration**: Commands are dynamically registered on startup.
+- 🔔 **Event-driven architecture**: Manage events like `ready` and `interactionCreate`.
+- 🛠️ **Modular design**: Commands and events are organized for scalability.
+- 🌐 **Environment variable configuration**: Set the bot's status and activity through a `.env` file.
+- ❓ **Interactive Help Command**: View all commands or detailed information about a specific command.
 
 ---
 
@@ -19,6 +21,7 @@ This **Discord bot** is built with [Discord.js](https://discord.js.org/) and ena
 │   ├── avatar.js
 │   ├── ban.js
 │   ├── clear.js
+│   ├── help.js             # Interactive help command
 │   ├── meme.js
 │   ├── ping.js
 │   ├── poll.js
@@ -27,8 +30,8 @@ This **Discord bot** is built with [Discord.js](https://discord.js.org/) and ena
 │   ├── unban.js
 │   ├── user.js
 ├── 📂 events/
-│   ├── ready.js              # Event fired when the bot is ready
-│   ├── interactionCreate.js  # Event to handle interactions
+│   ├── ready.js              # Fired when the bot is ready
+│   ├── interactionCreate.js  # Handles interactions
 ├── .env                      # Environment variables
 ├── .gitignore                # Files to ignore in Git
 ├── index.js                  # Main entry point for the bot
@@ -61,6 +64,9 @@ This **Discord bot** is built with [Discord.js](https://discord.js.org/) and ena
    TOKEN=your-bot-token
    CLIENT_ID=your-bot-client-id
    OWNER_ID=your-id
+   BOT_STATUS=online                  # Bot's status (online, idle, dnd, invisible)
+   BOT_ACTIVITY_NAME=your commands 👾 # Activity description
+   BOT_ACTIVITY_TYPE=WATCHING         # Activity type (PLAYING, STREAMING, LISTENING, WATCHING, COMPETING)
    ```
 
 4. Start the bot:
@@ -76,36 +82,92 @@ This **Discord bot** is built with [Discord.js](https://discord.js.org/) and ena
 ---
 
 ## 📜 **Available Commands**
-Here is the list of currently implemented commands:
+Here’s a list of the currently implemented commands:
 
-| Command       | Description                            |
-|---------------|----------------------------------------|
-| **`/avatar`**   | Displays a user’s avatar.            |
-| **`/ban`**   | Bans a member from the server.            |
-| **`/clear`**   | Deletes a specified number of messages. |
-| **`/meme`**   | Displays a random meme. |
-| **`/ping`**    | Check the bot and Discord API latency. |
-| **`/poll`**    | Creates a poll with multiple options. |
-| **`/reload`**  | Restarts the bot (Admin only).        |
-| **`/server-info`** | Displays server information.     |
-| **`/unban`**   | Unbans a user by their ID.           |
-| **`/user`**    | Get information about a selected user. |
+| Command           | Description                                     |
+|--------------------|-------------------------------------------------|
+| **`/avatar`**      | Displays a user’s avatar.                      |
+| **`/ban`**         | Bans a member from the server.                 |
+| **`/clear`**       | Deletes a specified number of messages.        |
+| **`/help`**        | Displays a list of commands or details about one. |
+| **`/meme`**        | Displays a random meme.                        |
+| **`/ping`**        | Check the bot and Discord API latency.         |
+| **`/poll`**        | Creates a poll with multiple options.          |
+| **`/reload`**      | Restarts the bot (Admin only).                 |
+| **`/server-info`** | Displays server information.                   |
+| **`/unban`**       | Unbans a user by their ID.                     |
+| **`/user`**        | Get information about a selected user.         |
+
+---
+
+## ❓ **Help Command**
+The `/help` command lets users view all available commands or get detailed information about a specific command.
+
+### Usage:
+- **To list all commands**:
+  ```plaintext
+  /help
+  ```
+  Example Output:
+  ```plaintext
+  Help: List of Commands
+  Utility
+  /help: Displays a list of commands or details about a specific command.
+  ...
+  ```
+
+- **To get details about a specific command**:
+  ```plaintext
+  /help command:ping
+  ```
+  Example Output:
+  ```plaintext
+  Help: /ping
+  Checks the bot and Discord API latency.
+  ```
+
+---
+
+## 🌐 **Environment Variable Behavior**
+- **If `BOT_ACTIVITY_NAME` or `BOT_ACTIVITY_TYPE` is missing:**  
+  The bot will only set the `BOT_STATUS` without an activity.
+- Example Scenarios:
+  - **Full Configuration**:
+    ```plaintext
+    BOT_STATUS=online
+    BOT_ACTIVITY_NAME=awesome bots 🚀
+    BOT_ACTIVITY_TYPE=PLAYING
+    ```
+    Console output:
+    ```plaintext
+    ✅ Logged in as BotName#1234
+    ✅ Status set to: online, Activity: PLAYING awesome bots 🚀
+    ```
+  - **Missing Activity Settings**:
+    ```plaintext
+    BOT_STATUS=dnd
+    ```
+    Console output:
+    ```plaintext
+    ✅ Logged in as BotName#1234
+    ✅ Status set to: dnd, No activity configured.
+    ```
 
 ---
 
 ## 🛡️ **Error Handling**
-- If a command file or event file is misconfigured, an error will be logged without crashing the bot.
-- Invalid or missing commands will gracefully respond with an error message to the user.
-- The bot will log all errors for easier debugging.
+- Errors in command or event files are logged without crashing the bot.
+- Invalid commands return user-friendly error messages.
+- Logs errors in the console for easier debugging.
 
 ---
 
-## 📝 **Example Output**
-### Console:
+## 📝 **Example Console Output**
 ```plaintext
 🔄 Updated Slash commands...
 ✅ Slash commands updated successfully.
-Logged in as BotName#1234
+✅ Logged in as BotName#1234
+✅ Status set to: online, Activity: WATCHING your commands 👾
 ```
 
 ---
@@ -120,7 +182,7 @@ For more information, refer to the [LICENSE](./LICENSE) file.
 ### 📋 **Add New Commands**
 To add new commands:
 1. Create a new `.js` file in the `commands` folder.
-2. Use the following template for the command:
+2. Use the following template:
    ```javascript
    const { SlashCommandBuilder } = require('discord.js');
 
@@ -134,4 +196,4 @@ To add new commands:
        },
    };
    ```
-3. Restart the bot, and the new command will be registered automatically.
+3. Restart the bot to register the new command.

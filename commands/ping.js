@@ -4,6 +4,7 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('ping')
         .setDescription('Check the bot and Discord API latency.'),
+    category: 'Fun',
     async execute(interaction) {
         const botLatency = Date.now() - interaction.createdTimestamp;
         const apiLatency = Math.round(interaction.client.ws.ping);
